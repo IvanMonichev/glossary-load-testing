@@ -1,0 +1,1 @@
+MONGO_URI = 'mongodb://admin:password@exp-mongo:27017/glossary'
