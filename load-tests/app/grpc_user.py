@@ -4,7 +4,7 @@ import time
 import random
 
 import glossary_pb2
-import app.glossary_pb2_grpc
+import glossary_pb2_grpc
 
 from config import GRPC_HOST, TERM_IDS
 
