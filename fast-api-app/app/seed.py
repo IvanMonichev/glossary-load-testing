@@ -1,7 +1,7 @@
 from faker import Faker
 from motor.motor_asyncio import AsyncIOMotorClient
 
-from config import MONGO_URI
+from app.config import MONGO_URI
 
 fake = Faker()
 client = AsyncIOMotorClient(MONGO_URI)
