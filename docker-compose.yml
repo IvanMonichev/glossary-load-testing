@@ -6,7 +6,7 @@ services:
     container_name: exp-mongo
     restart: always
     ports:
-      - "27018:27017"
+      - "27019:27017"
     environment:
       MONGO_INITDB_ROOT_USERNAME: admin
       MONGO_INITDB_ROOT_PASSWORD: password
@@ -50,7 +50,19 @@ services:
     depends_on:
       - mongo
     ports:
-      - "8000:8000"
+      - "4010:4010"
+
+  load-tests:
+    build:
+      context: ./load-tests
+      dockerfile: Dockerfile
+    container_name: exp-load-tests
+    restart: always
+    depends_on:
+      - fastapi-service
+      - grpc-service
+    ports:
+      - "8089:8089"
 
 volumes:
   mongo_data:
